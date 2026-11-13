@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foji Wishes Koji - 1 Month Anniversary</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c8a97e;--sage:#9ab0a0;--cream:#fdf8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:#3a3a3a;overflow-x:hidden}
+.great{font-family:'Great Vibes',cursive}
+.heart-fly{position:fixed;bottom:-20px;font-size:20px;animation:fly 4s linear infinite;z-index:9999;pointer-events:none}
+@keyframes fly{0%{transform:translateY(0) scale(0.5);opacity:1}100%{transform:translateY(-100vh) scale(1.5);opacity:0}}
+#gate{position:fixed;inset:0;z-index:9999;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#f9f1e7,#e8ddd0);transition:0.8s}
+.gate-card{width:92%;max-width:380px;height:620px;position:relative;cursor:pointer;box-shadow:0 20px 60px rgba(0,0,0,0.2);border-radius:12px;overflow:hidden}
+.gate-left,.gate-right{position:absolute;top:0;width:50%;height:100%;transition:1.3s;z-index:2}
+.gate-left{left:0;background:linear-gradient(180deg,#b8c7b0,#8fa68d)}
+.gate-right{right:0;background:linear-gradient(180deg,#b8c7b0,#8fa68d)}
+.gate-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:white;width:145px;height:145px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:4px solid #c8a97e;text-align:center}
+.gate-card.open .gate-left{transform:translateX(-105%)}
+.gate-card.open .gate-right{transform:translateX(105%)}
+.gate-card.open .gate-center{opacity:0;transform:translate(-50%,-50%) scale(0)}
+.main{opacity:0;transition:1s}.main.show{opacity:1}
+.curtain-hero{height:100vh;background:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.2)),url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.curtain{position:absolute;top:0;width:50.5%;height:100%;background:linear-gradient(#fdf8f0,#f3e6d3);z-index:2;transition:1.6s}
+.curtain.left{left:0}.curtain.right{right:0}
+.curtain-hero.open .curtain.left{transform:translateX(-100%)}
+.curtain-hero.open .curtain.right{transform:translateX(100%)}
+.hero-text{text-align:center;z-index:1;padding:28px;background:rgba(255,255,255,0.92);border-radius:20px;max-width:88%}
+section{padding:40px 18px;max-width:480px;margin:0 auto;text-align:center}
+.card{background:white;border-radius:22px;padding:26px;box-shadow:0 10px 35px rgba(0,0,0,0.06);margin:22px 0;border:1px solid #f0e6d6;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#c8a97e,#9ab0a0)}
+.scratch-wrap{position:relative;width:285px;height:285px;margin:15px auto 0}
+#scratch-canvas{position:absolute;top:0;left:0;border-radius:50%;cursor:pointer;z-index:2;touch-action:none}
+.heart-reveal{width:285px;height:285px;background:radial-gradient(circle at 30% 30%,#fde9d0,#c8a97e);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.countdown{display:flex;gap:8px;margin-top:18px}
+.cd-box{background:linear-gradient(135deg,#fdf8f0,#f3e6d3);border-radius:14px;padding:14px 6px;flex:1;border:1px solid #c8a97e}
+.cd-box b{font-size:20px;display:block;color:#6b7f6e}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.gallery img{width:100%;height:180px;object-fit:cover;border-radius:16px}
+.btn{background:linear-gradient(135deg,#9ab0a0,#7a8a6e);color:white;border:none;padding:13px 28px;border-radius:30px;cursor:pointer;margin-top:16px}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="gate-card" id="gateCard" onclick="openGate()">
+    <div class="gate-left"></div>
+    <div class="gate-right"></div>
+    <div class="gate-center">
+      <span class="great" style="font-size:22px">Foji 💌 Koji</span>
+      <span style="font-size:10px;margin-top:4px">TAP TO OPEN</span>
+      <span style="font-size:18px;margin-top:5px">✨</span>
+    </div>
+  </div>
+</div>
+
+<div class="main" id="main">
+  <div class="curtain-hero" id="curtainHero">
+    <div class="curtain left"></div><div class="curtain right"></div>
+    <div class="hero-text">
+      <p style="font-size:11px;color:#7a8a6e;font-weight:600">FOJI'S SURPRISE FOR KOJI</p>
+      <h1 class="great" style="font-size:46px;margin-top:12px">Koji<br>& Foji</h1>
+      <p style="font-size:13px;margin-top:10px">Our 1 Month Promise Anniversary</p>
+      <p style="font-size:11px;color:#888">14 Oct • Our Wada Day</p>
+      <button class="btn" onclick="openCurtain()">Open My Letter 💌</button>
+    </div>
+  </div>
+
+  <section>
+    <div class="card">
+      <p class="great" style="font-size:30px">Scratch to Reveal 💖</p>
+      <div class="scratch-wrap">
+        <div class="heart-reveal">
+          <p style="font-size:11px">FOR MY KOJI</p>
+          <h2 class="great" style="font-size:34px">You Changed<br>My Life</h2>
+          <p style="font-size:13px;font-weight:600;margin-top:8px">14 October 2025</p>
+        </div>
+        <canvas id="scratch-canvas" width="285" height="285"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="great" style="font-size:30px">Counting Our Days</h3>
+      <div class="countdown"><div class="cd-box"><b id="days">30</b>DAYS</div><div class="cd-box"><b id="hours">12</b>HRS</div><div class="cd-box"><b id="mins">45</b>MINS</div><div class="cd-box"><b id="secs">10</b>SECS</div></div>
+    </div>
+
+    <div class="card" style="background:linear-gradient(135deg,#fff9f0,#fdf8f0);border:2px solid #c8a97e">
+      <h3 class="great" style="font-size:40px">For My Koji 💌</h3>
+      <div style="text-align:left;margin-top:20px;font-size:14px;line-height:26px">
+        Meri Pyaari <b>Koji</b>,<br><br>
+        Happy 1 Month Anniversary! 🎉<br><br>
+        Yaad hai 14 October ko humne wada kiya tha?<br><br>
+        <b style="color:#7a8a6e;font-size:16px">Koji tum badal gaye ho... 💖</b><br>
+        Sach me, tum pehle se bohat behtar ho gaye ho. Mujhe tum pe fakhar hai!<br><br>
+        Tum meri sirf bestie nahi, meri himmat ho.<br><br>
+        <b>Thank you meri Koji banne ke liye.</b><br><br>
+        Love you forever ♾️
+      </div>
+      <div style="text-align:right;margin-top:25px">
+        <p class="great" style="font-size:28px">Tumhari Foji 💖</p>
+      </div>
+      <button class="btn" onclick="createHearts()">Send Flying Hearts to Koji 💖</button>
+    </div>
+  </section>
+</div>
+
+<script>
+function openGate(){
+  document.getElementById('gateCard').classList.add('open');
+  setTimeout(()=>{document.getElementById('gate').style.opacity='0';setTimeout(()=>{document.getElementById('gate').style.display='none';document.getElementById('main').classList.add('show')},800)},1300)
+}
+function openCurtain(){document.getElementById('curtainHero').classList.add('open');createHearts()}
+function createHearts(){
+  for(let i=0;i<15;i++){
+    setTimeout(()=>{
+      const h=document.createElement('div');
+      h.className='heart-fly';
+      h.innerText=['💖','❤️','💕','💗','💓'][Math.floor(Math.random()*5)];
+      h.style.left=Math.random()*90+'vw';
+      h.style.fontSize=(15+Math.random()*20)+'px';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),4000);
+    },i*150)
+  }
+}
+setInterval(createHearts,3000);
+const canvas=document.getElementById('scratch-canvas');const ctx=canvas.getContext('2d');let isDrawing=false;
+function initScratch(){ctx.fillStyle='#9ab0a0';ctx.fillRect(0,0,285,285);ctx.globalCompositeOperation='destination-out'}
+function getPos(e){const r=canvas.getBoundingClientRect();const x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;const y=(e.touches?e.touches[0].clientY:e.clientY)-r.top;return {x,y}}
+function scratch(e){if(!isDrawing) return;e.preventDefault();const p=getPos(e);ctx.beginPath();ctx.arc(p.x,p.y,22,0,Math.PI*2);ctx.fill()}
+canvas.addEventListener('mousedown',()=>isDrawing=true);canvas.addEventListener('mouseup',()=>isDrawing=false);canvas.addEventListener('mousemove',scratch);
+canvas.addEventListener('touchstart',(e)=>{isDrawing=true;scratch(e)},{passive:false});canvas.addEventListener('touchend',()=>isDrawing=false);canvas.addEventListener('touchmove',scratch,{passive:false});
+initScratch();
+const startDate=new Date('2025-10-14T00:00:00');function updateCd(){const now=new Date();const diff=now-startDate;document.getElementById('days').innerText=Math.floor(diff/86400000);document.getElementById('hours').innerText=Math.floor(diff/3600000)%24;document.getElementById('mins').innerText=Math.floor(diff/60000)%60;document.getElementById('secs').innerText=Math.floor(diff/1000)%60}setInterval(updateCd,1000);updateCd();
+</script>
+</body>
+</html>
